@@ -3,7 +3,7 @@
 
 var Steam = require('steam-user'), fs = require('fs'), readlineSync = require('readline-sync');
 var client = new Steam();
-var settings = JSON.parse(fs.readFileSync('config.json', 'utf8'));
+var settings = require('./config.json');
 
 // Looping function @lynxaa
 var forallArray = function(array) {
@@ -17,10 +17,7 @@ var forallArray = function(array) {
 }
 
 // User Input
-var mobileCode = function() {
-  var code = readFileSync.question("Please enter your mobile code: ");
-  return code;
-}
+var mobileCode = readlineSync.question("Please enter your mobile code: ");
 
 client.logOn({
   accountName: settings.username,
