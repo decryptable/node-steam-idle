@@ -19,6 +19,10 @@ var forallArray = function(array) {
 // User Input
 var mobileCode = readlineSync.question("Please enter your mobile code: ");
 
+client.on("connected", function() {
+  console.log("[STEAM] Connected to Steam Servers.");
+});
+
 client.logOn({
   accountName: settings.username,
   password: settings.password,
@@ -27,6 +31,7 @@ client.logOn({
 
 client.on("loggedOn", function() {
   console.log("[STEAM] Logged on.");
+  console.log("[STEAM] Idling games.");
   client.setPersona(Steam.EPersonaState.Online);
   client.gamesPlayed(forallArray(settings.games));
 });
