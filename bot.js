@@ -5,7 +5,7 @@ var Steam = require('steam-user'), fs = require('fs'), readlineSync = require('r
 var client = new Steam();
 var settings = require('./config.json');
 
-// Looping function @lynxaa
+// Looping function
 var forallArray = function(array) {
   for (var i = array.Length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
