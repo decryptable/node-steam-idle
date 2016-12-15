@@ -27,7 +27,7 @@ client.logOn({
   accountName: settings.username,
   password: settings.password,
   twoFactorCode: mobileCode
-})
+});
 
 client.on("loggedOn", function() {
   console.log("[STEAM] Logged on.");
